@@ -1,0 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tssaito <tssaito@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 17:58:35 by tssaito           #+#    #+#             */
+/*   Updated: 2024/11/11 22:02:40 by tssaito          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdint.h>
+# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# if BUFFER_SIZE < 0 || BUFFER_SIZE > 99999999
+#  error BUFFER_SIZE must be greater than 0 and less than 100000000
+# endif
+
+# define READ_ERROR -22
+# define MALLOC_ERROR -42
+
+typedef struct s_buf
+{
+	char	*buf;
+	char	*save;
+	int		len;
+}			t_buf;
+
+typedef struct s_line
+{
+	char	*line;
+	size_t	len;
+	size_t	m_size;
+}			t_line;
+
+char		*get_next_line(int fd);
+void		add_char(char *ans, char c, size_t len);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+int			ft_getchar(int fd, t_buf *buf);
+int			ft_make_ans(char c, t_line *ans);
+void		ft_init(int fd, t_line *ans, t_buf *buf);
+
+#endif
