@@ -6,7 +6,7 @@
 /*   By: tssaito <tssaito@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:58:43 by tssaito           #+#    #+#             */
-/*   Updated: 2024/11/11 22:13:46 by tssaito          ###   ########.fr       */
+/*   Updated: 2024/12/13 22:58:17 by tssaito          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,11 @@ char	*get_next_line(int fd)
 //	{
 //		line = get_next_line(fd);
 //		if (!line)
+//		{
+//			printf("line: NULL\n");
+//			printf("=================\n");
 //			break;
+//		}
 //		printf("line: %s", line);
 //		printf("=================\n");
 //		free(line);
