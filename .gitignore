@@ -1,0 +1,4 @@
+!.gitignore
+.cache
+compile_commands.json
+vgcore.*
